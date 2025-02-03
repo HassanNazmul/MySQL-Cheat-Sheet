@@ -2,9 +2,25 @@
 
 ## Basic SQL Commands
 - **SELECT** - Retrieves data from a database
+    ```sql
+    SELECT column1, column2 FROM table_name;  -- Selects specified columns from the table
+    ```
 - **INSERT INTO** - Adds new data into a database
+    ```sql
+    INSERT INTO table_name (column1, column2)  -- Specifies target table and columns
+    VALUES (value1, value2);                   -- Provides values to insert
+    ```
 - **UPDATE** - Modifies existing data within a database
+    ```sql
+    UPDATE table_name                -- Specifies table to update
+    SET column1 = value1            -- Sets new values for columns
+    WHERE condition;                -- Filters which rows to update
+    ```
 - **DELETE** - Removes data from a database
+    ```sql
+    DELETE FROM table_name          -- Specifies table to delete from
+    WHERE condition;                -- Filters which rows to delete
+    ```
 
 ## Filtering Data
 - **WHERE** - Filters records based on a specified condition
