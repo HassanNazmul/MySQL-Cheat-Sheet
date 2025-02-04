@@ -24,12 +24,40 @@
 
 ## Filtering Data
 - **WHERE** - Filters records based on a specified condition
+    ```sql
+    SELECT column1, column2 FROM table_name     -- Selects columns
+    WHERE condition;                            -- Filters rows based on condition
+    ```
 - **AND, OR, NOT** - Combines multiple conditions
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE condition1 AND condition2;            -- Both conditions must be true
+    ```
 - **IN** - Checks if a value exists within a set of values
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE column_name IN (value1, value2);      -- Matches any value in the list
+    ```
 - **BETWEEN** - Filters data within a given range
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE column_name BETWEEN value1 AND value2; -- Matches values in range
+    ```
 - **LIKE** - Searches for a specified pattern in a column
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE column_name LIKE 'pattern%';          -- Matches pattern with wildcard
+    ```
 - **IS NULL, IS NOT NULL** - Checks for NULL (or non-NULL) values
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE column_name IS NULL;                  -- Matches NULL values
+    ```
 - **EXISTS** - Checks if a subquery returns any records
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    WHERE EXISTS (SELECT * FROM another_table); -- Checks subquery results
+    ```
 
 ## Sorting and Limiting Data
 - **ORDER BY** - Sorts the result set by one or more columns
