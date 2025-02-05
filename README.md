@@ -61,8 +61,19 @@
 
 ## Sorting and Limiting Data
 - **ORDER BY** - Sorts the result set by one or more columns
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    ORDER BY column1 ASC, column2 DESC;         -- Sorts by column1 ascending, column2 descending
+    ```
 - **LIMIT** - Specifies the number of records to return
+    ```sql
+    SELECT * FROM table_name                    -- Selects all columns
+    LIMIT 10;                                   -- Returns only first 10 records
+    ```
 - **DISTINCT** - Returns only distinct (unique) values
+    ```sql
+    SELECT DISTINCT column1 FROM table_name;    -- Returns unique values from column1
+    ```
 
 ## Aggregating Data
 - **COUNT()** - Counts the number of rows
