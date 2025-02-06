@@ -77,12 +77,38 @@
 
 ## Aggregating Data
 - **COUNT()** - Counts the number of rows
+    ```sql
+    SELECT COUNT(*) FROM table_name;           -- Counts total number of rows
+    ```
 - **SUM()** - Calculates the sum of a numeric column
+    ```sql
+    SELECT SUM(column_name) FROM table_name;   -- Calculates sum of values in column
+    ```
 - **AVG()** - Calculates the average value of a numeric column
+    ```sql
+    SELECT AVG(column_name) FROM table_name;   -- Calculates average of values in column
+    ```
 - **MIN()** - Finds the minimum value in a column
+    ```sql
+    SELECT MIN(column_name) FROM table_name;   -- Finds smallest value in column
+    ```
 - **MAX()** - Finds the maximum value in a column
+    ```sql
+    SELECT MAX(column_name) FROM table_name;   -- Finds largest value in column
+    ```
 - **GROUP BY** - Groups rows that have the same values in specified columns
+    ```sql
+    SELECT column1, COUNT(*) 
+    FROM table_name
+    GROUP BY column1;                          -- Groups results by column1
+    ```
 - **HAVING** - Filters groups based on a specified condition
+    ```sql
+    SELECT column1, COUNT(*) 
+    FROM table_name
+    GROUP BY column1
+    HAVING COUNT(*) > 5;                       -- Filters groups with count > 5
+    ```
 
 ## Joins
 - **INNER JOIN** - Returns records with matching values in both tables
