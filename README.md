@@ -112,11 +112,41 @@
 
 ## Joins
 - **INNER JOIN** - Returns records with matching values in both tables
+    ```sql
+    SELECT * FROM table1                         -- Selects all columns
+    INNER JOIN table2                           -- Specifies join type
+    ON table1.id = table2.id;                  -- Defines join condition
+    ```
 - **LEFT JOIN** (LEFT OUTER JOIN) - Returns all records from the left table, and matched records from the right table
+    ```sql
+    SELECT * FROM table1                         -- Selects all columns
+    LEFT JOIN table2                            -- Specifies join type
+    ON table1.id = table2.id;                  -- Defines join condition
+    ```
 - **RIGHT JOIN** (RIGHT OUTER JOIN) - Returns all records from the right table, and matched records from the left table
+    ```sql
+    SELECT * FROM table1                         -- Selects all columns
+    RIGHT JOIN table2                           -- Specifies join type
+    ON table1.id = table2.id;                  -- Defines join condition
+    ```
 - **FULL JOIN** (FULL OUTER JOIN) - Returns all records when there is a match in either left or right table
+    ```sql
+    SELECT * FROM table1                         -- Selects all columns
+    FULL OUTER JOIN table2                      -- Specifies join type
+    ON table1.id = table2.id;                  -- Defines join condition
+    ```
 - **CROSS JOIN** - Returns the Cartesian product of two tables
+    ```sql
+    SELECT * FROM table1                         -- Selects all columns
+    CROSS JOIN table2;                          -- Creates Cartesian product
+    ```
 - **SELF JOIN** - Joins a table with itself
+    ```sql
+    SELECT a.column1, b.column2                  -- Selects columns from both instances
+    FROM table1 a                               -- First instance of table
+    JOIN table1 b                               -- Second instance of same table
+    ON a.id = b.parent_id;                     -- Defines join condition
+    ```
 
 ## Subqueries
 - Subqueries in **SELECT** - Retrieves data in a subquery used within a SELECT statement
