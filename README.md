@@ -150,8 +150,26 @@
 
 ## Subqueries
 - Subqueries in **SELECT** - Retrieves data in a subquery used within a SELECT statement
+    ```sql
+    SELECT column1,
+           (SELECT COUNT(*) FROM table2         -- Subquery in SELECT
+            WHERE table2.id = table1.id) as count
+    FROM table1;
+    ```
 - Subqueries in **WHERE** - Uses a subquery to filter data within a WHERE clause
+    ```sql
+    SELECT * FROM table1                        -- Main query
+    WHERE column1 IN                           -- WHERE clause with subquery
+          (SELECT column1 FROM table2
+           WHERE condition);
+    ```
 - Subqueries in **FROM** - Uses a subquery within the FROM clause
+    ```sql
+    SELECT avg_price FROM                       -- Main query
+        (SELECT category, AVG(price) as avg_price
+         FROM products                         -- Subquery in FROM
+         GROUP BY category) AS category_stats;
+    ```
 
 ## Set Operations
 - **UNION** - Combines the results of two or more SELECT statements, excluding duplicates
