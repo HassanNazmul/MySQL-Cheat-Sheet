@@ -173,9 +173,29 @@
 
 ## Set Operations
 - **UNION** - Combines the results of two or more SELECT statements, excluding duplicates
+    ```sql
+    SELECT column1 FROM table1               -- First SELECT statement
+    UNION                                    -- Combines results, removes duplicates
+    SELECT column1 FROM table2;              -- Second SELECT statement
+    ```
 - **UNION ALL** - Combines the results of two or more SELECT statements, including duplicates
+    ```sql
+    SELECT column1 FROM table1               -- First SELECT statement
+    UNION ALL                               -- Combines results, keeps duplicates
+    SELECT column1 FROM table2;              -- Second SELECT statement
+    ```
 - **INTERSECT** - Returns only the records that appear in both result sets
+    ```sql
+    SELECT column1 FROM table1               -- First SELECT statement
+    INTERSECT                               -- Returns common records only
+    SELECT column1 FROM table2;              -- Second SELECT statement
+    ```
 - **EXCEPT** - Returns the records in the first result set that are not in the second
+    ```sql
+    SELECT column1 FROM table1               -- First SELECT statement
+    EXCEPT                                  -- Returns records unique to first query
+    SELECT column1 FROM table2;              -- Second SELECT statement
+    ```
 
 ## Data Modification
 - **INSERT** - Adds new records to a table
