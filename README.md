@@ -199,8 +199,21 @@
 
 ## Data Modification
 - **INSERT** - Adds new records to a table
+    ```sql
+    INSERT INTO table_name (column1, column2)  -- Specifies target table and columns
+    VALUES (value1, value2);                   -- Provides values to insert
+    ```
 - **UPDATE** - Modifies existing records in a table
+    ```sql
+    UPDATE table_name                -- Specifies table to update
+    SET column1 = value1            -- Sets new values
+    WHERE condition;                -- Specifies which records to update
+    ```
 - **DELETE** - Removes records from a table
+    ```sql
+    DELETE FROM table_name          -- Specifies table to delete from
+    WHERE condition;                -- Specifies which records to delete
+    ```
 
 ## Indexing
 - **CREATE INDEX** - Creates an index on a table
