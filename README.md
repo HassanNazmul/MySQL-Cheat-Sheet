@@ -217,10 +217,30 @@
 
 ## Indexing
 - **CREATE INDEX** - Creates an index on a table
+    ```sql
+    CREATE INDEX index_name             -- Creates a new index
+    ON table_name (column1, column2);   -- Specifies table and columns to index
+    ```
 - **DROP INDEX** - Deletes an index from a table
+    ```sql
+    DROP INDEX index_name              -- Removes the specified index
+    ON table_name;                     -- From the specified table
+    ```
 - **UNIQUE INDEX** - Creates a unique index on a table
+    ```sql
+    CREATE UNIQUE INDEX index_name     -- Creates index with unique constraint
+    ON table_name (column1);          -- On specified table and column
+    ```
 - **FULL-TEXT INDEX** - Creates a full-text index on a table
+    ```sql
+    CREATE FULLTEXT INDEX index_name   -- Creates full-text search index
+    ON table_name (column1);          -- On specified table and column
+    ```
 - **COMPOSITE INDEX** - Creates an index on multiple columns
+    ```sql
+    CREATE INDEX index_name           -- Creates multi-column index
+    ON table_name (col1, col2, col3); -- On specified columns in order
+    ```
 
 ## Transactions
 - **BEGIN TRANSACTION** - Starts a database transaction
