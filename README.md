@@ -244,11 +244,49 @@
 
 ## Transactions
 - **BEGIN TRANSACTION** - Starts a database transaction
+    ```sql
+    BEGIN TRANSACTION;                     -- Starts a new transaction
+    INSERT INTO table1 VALUES (1, 'a');    -- First operation
+    UPDATE table2 SET col1 = 'b';         -- Second operation
+    COMMIT;                               -- Commits if all operations succeed
+    ```
 - **COMMIT** - Saves the changes made in a transaction
+    ```sql
+    BEGIN TRANSACTION;
+    UPDATE accounts SET balance = balance - 100;
+    UPDATE accounts SET balance = balance + 100;
+    COMMIT;                               -- Makes changes permanent
+    ```
 - **ROLLBACK** - Undoes the changes made in a transaction
+    ```sql
+    BEGIN TRANSACTION;
+    UPDATE accounts SET balance = balance - 100;
+    IF ERROR_OCCURRED THEN
+        ROLLBACK;                         -- Reverts all changes if error occurs
+    END IF;
+    ```
 - **SAVEPOINT** - Sets a savepoint within a transaction
+    ```sql
+    BEGIN TRANSACTION;
+    INSERT INTO table1 VALUES (1);
+    SAVEPOINT save1;                      -- Creates a savepoint
+    INSERT INTO table1 VALUES (2);
+    ROLLBACK TO save1;                    -- Rolls back to savepoint
+    ```
 - **SET TRANSACTION** - Sets the characteristics of the current transaction
+    ```sql
+    SET TRANSACTION ISOLATION LEVEL       -- Sets isolation level
+    READ COMMITTED;                      -- Specifies level type
+    ```
 - **ISOLATION LEVEL** - Sets the isolation level for the current transaction
+    ```sql
+    BEGIN TRANSACTION;
+    SET TRANSACTION ISOLATION LEVEL      -- Available levels:
+    SERIALIZABLE;                       -- READ UNCOMMITTED
+                                       -- READ COMMITTED
+                                       -- REPEATABLE READ
+                                       -- SERIALIZABLE
+    ```
 
 ## Views
 - **CREATE VIEW** - Creates a view
